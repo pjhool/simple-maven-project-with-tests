@@ -1,4 +1,4 @@
-podTemplate(label: BUILD_TAG, containers: [containerTemplate(name: 'maven', image: 'maven', command: 'sleep', args: 'infinity')]) {
+
   node(BUILD_TAG) {
     checkout scm
     container('maven') {
@@ -6,4 +6,4 @@ podTemplate(label: BUILD_TAG, containers: [containerTemplate(name: 'maven', imag
     }
     junit '**/target/surefire-reports/TEST-*.xml'
   }
-}
+
